@@ -15,11 +15,12 @@ const EmailVerify = () => {
 
   const inputRefs = React.useRef([])
 
-  const handleInput = (e, index)=>{
-    if(e.target.value > 0 && index < inputRefs.current.length -1){
-      inputRefs.current[index +1].focus();
-    }
+  const handleInput = (e, index) => {
+  if(e.target.value.length === 1 && index < inputRefs.current.length - 1){
+    inputRefs.current[index + 1].focus()
   }
+}
+
   const handleKeyDown = (e, index)=>{
     if(e.key === 'Backspace' && e.target.value === '' && index > 0){
       inputRefs.current[index - 1].focus();
